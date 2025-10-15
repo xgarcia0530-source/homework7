@@ -1,0 +1,254 @@
+
+a {
+  text-decoration: none;
+}
+
+
+.scrollable-container {
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  border: 1px solid #ccc; 
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: large;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "nav main";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 1fr;
+  font-family: 'Playfair Display', sans-serif;
+  
+  
+}
+
+
+  main {
+  grid-area: main;
+  padding: 100px 20px 20px;;
+  line-height: 1.5;
+  height: calc(100vh - 80px - 60px);
+  overflow-y: auto;
+}
+
+
+header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 1000;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to right, #070e35, #1a31a8);
+      
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  z-index: 1000;
+  background: linear-gradient(to right, #070e35, #1a31a8);
+  font-family: 'Playfair Display', serif;
+}
+
+
+nav { 
+  position: sticky;
+  top: 80px;
+  grid-area: nav;
+  background-color: #5d7791;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: calc(100vh - 80px - 60px); 
+  overflow-y: auto;
+  font-family: 'Roboto', sans-serif ;
+   background: linear-gradient(to right, #070e35, #5d7791);
+}
+
+.nav-link {
+  text-decoration: none; 
+}
+
+.nav-link:hover {
+  text-decoration: none; 
+}
+
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #feffff;
+  color: rgb(0, 0, 0);
+  font: 1rem "Times New Roman", sans-serif;
+  font-weight: bold;
+  border: 2px solid #000000;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #d5d5dd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+  transform: scale(1.05);
+}
+
+
+.resume-btn {
+  background-color: #2441e4;
+  color: white;
+  border: 2px solid #000000;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.resume-btn:hover {
+  background-color: #1a31a8;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+  transform: scale(1.05);
+}
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;  
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  padding-top: 100px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.skill-card {
+  background-color: #283479; 
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  background: linear-gradient(135deg, #d1df12, #2441e4);
+  color: black;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+
+.skills-container {
+  display: grid;                    
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));                      
+  gap: 15px;
+  justify-items: center;    
+}
+
+
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+  object-fit: cover;
+  height: 500px;
+  transition: transform 0.3s ease;
+}
+
+.project-card img:hover {
+  transform: scale(1.05);
+}
+
+.project-card .card-title {
+  color: #5d7791;
+  font-weight: 700;
+}
+
+.project-card .card-text {
+  color: #000000;
+  font-size: 0.95rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  flex-grow: 1;
+  margin: 0;    
+}
+
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+
+@media (max-width: 1024px) {
+  body {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 180px 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    grid-template-columns: 150px 1fr;
+    font-size: 14px;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
