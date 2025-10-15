@@ -12,8 +12,17 @@ document.addEventListener("DOMContentLoaded", function() {
     console.error("Could not find greeting element in DOM.");
   }
 
-  const downloadButton = document.getElementById("resume-btn");
-  
+const downloadButton = document.getElementById("resume-btn");
+
+downloadButton.addEventListener("click", function() {
+  if (!hasDownloadedResume) {
+    alert(`The resume has been downloaded successfully!`);
+    hasDownloadedResume = true;
+  } else {
+    console.log("Resume has already been downloaded — no alert shown.");
+  }
+});
+
   function daysUntilDeadline(deadline) {
     const currentDate = new Date();
     const deadlineDate = new Date(deadline);
@@ -32,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 });
+
 
 
 
